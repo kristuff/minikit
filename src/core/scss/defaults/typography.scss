@@ -1,0 +1,74 @@
+
+html {
+    font-family: $primary-font;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $primary-font;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* H* */
+
+//
+// 1. Remove top margins from headings
+//    By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
+//    margin for easier control within type scales as it avoids margin collapsing.
+
+%heading {
+    margin-top: 0; // 1
+    margin-bottom: $headings-margin-bottom;
+    line-height: $headings-line-height;
+    font-weight: $headings-font-weight;
+    font-weight: 200;
+}
+
+h1, .h1 {
+    @extend %heading;
+    font-size:6rem; 
+    
+    @media (min-width:768px)  {font-size:6.2rem;}
+    @media (min-width:1024px) {font-size:6.5em;}
+}
+
+h2, .h2 {
+    @extend %heading;
+    font-size:5rem; 
+
+    @media (min-width:768px)  {font-size:5.2rem;}
+    @media (min-width:1024px) {font-size:5.5rem;}
+}
+h3, .h3 {
+    @extend %heading;
+    font-size:4rem;  
+    
+    @media (min-width:768px)  {font-size:4.2rem;}
+    @media (min-width:1024px) {font-size:4.5rem;}
+}
+h4, .h4 {
+    @extend %heading;
+    font-size:3.5rem;
+     
+    @media (min-width:768px)  {font-size:3.7rem;}
+    @media (min-width:1024px) {font-size:3.9rem;}
+}
+h5, .h5 {
+    @extend %heading;
+    font-size:2.8rem;
+    
+    @media (min-width:768px)  {font-size:3rem;}
+    @media (min-width:1024px) {font-size:3.2rem;}
+}
+h6, .h6 {
+    @extend %heading;
+    font-size:2.2rem;
+    
+    @media (min-width:768px)  {font-size:2.4rem;}
+    @media (min-width:1024px) {font-size:2.6rem;}
+}
+
+

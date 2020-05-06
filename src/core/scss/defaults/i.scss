@@ -1,0 +1,18 @@
+i {
+    &.icon-right {
+        margin-left:6px;
+    }
+    
+}
+
+i.icon-left, 
+i.icon-spin {margin-right:6px;}
+i.icon-spin {display:none}
+
+.spin i.icon-spin {display:initial}
+.spin i.icon-left, 
+.spin i.icon-right {display:none}
+i.icon-o        {border:1px solid;border-radius:50%;padding:2px;}
+i.icon-o.fa-2x  {border:1px solid;border-radius:50%;padding:6px;}
+i.icon-o.fa-3x  {padding:16px;}
+i.icon-o.bg-color {border:0;} 

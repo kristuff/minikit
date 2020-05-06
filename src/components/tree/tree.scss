@@ -1,0 +1,22 @@
+/* accordion */
+.accordion {
+    border:1px solid #ddd;
+}
+.accordion-item {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    box-shadow:none;
+    width:100%;
+    display:block;
+    padding: 20px;
+    width: 100%;
+    text-align:left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+.accordion-item:after {content: '\02795'; font-size: 13px;color: #777;float: right;margin-left: 5px;}
+.accordion-item.active:after {content: "\2796";}
+.accordion-panel {padding:10px 20px;background-color: white;display:none;width:100%;}
+.accordion-item.active + .accordion-panel {display:block;}

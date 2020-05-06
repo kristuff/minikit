@@ -1,0 +1,18 @@
+// helper functions
+@function first($list) {
+    @return nth($list, 1);
+}
+
+@function second($list) {
+    @return nth($list, 2);
+}
+
+@function third($list) {
+    @return nth($list, 3);
+}
+@function fourth($list) {
+    @return nth($list, 4);
+}
+@function fith($list) {
+    @return nth($list, 5);
+}

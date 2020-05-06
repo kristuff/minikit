@@ -1,0 +1,29 @@
+.socials    {
+    vertical-align:baseline;
+    line-height:35px;
+}
+.socials-o  {
+    vertical-align:baseline;
+    line-height:45px;
+}
+
+.social, 
+.social-o {
+    text-align:center;
+    display: inline-block;
+    font-size:20px;
+}
+.social {
+    width:35px;
+    height:35px;
+
+    .social-text {
+        display:none
+    }    
+}
+.social-o {
+    width:45px;
+    height:45px;
+    border:1px solid;
+    border-radius: 50%;
+}

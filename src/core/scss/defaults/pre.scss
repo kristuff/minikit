@@ -1,0 +1,24 @@
+pre {
+      white-space: pre-wrap;
+      color:#444;
+      background-color: #eee;
+      font-size:14px;
+      line-height:18px;
+      padding:6px 12px;
+      margin:10px 0;
+      border-left:5px solid #aaa;
+      font-family: Consolas,monospace
+
+      code {
+            font-size: 100%;
+            background: none;
+            color: #333;
+      }
+}
+
+code {
+      padding: 2px 4px;
+      color: #c7254e;
+      background-color: #f9f2f4;
+      border-radius: 2px;
+}

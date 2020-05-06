@@ -1,0 +1,67 @@
+/* rating */
+.rating {
+    unicode-bidi:bidi-override;
+
+    span.star {
+        font-family:FontAwesome;
+        font-weight:normal;
+        font-style:normal;
+        display:inline-block;
+
+        &:before {
+            content:"\f006";
+            color:#777
+        }
+    }
+    
+    &:not(.edit)[data-value='1'] span.star:nth-child(1):before, 
+    &:not(.edit)[data-value='2'] span.star:nth-child(-n+2):before, 
+    &:not(.edit)[data-value='3'] span.star:nth-child(-n+3):before, 
+    &:not(.edit)[data-value='4'] span.star:nth-child(-n+4):before, 
+    &:not(.edit)[data-value='5'] span.star:nth-child(-n+5):before,
+    &.edit span.star:nth-child(1):hover:before, 
+    &.edit span.star:nth-child(2):hover ~ span.star:nth-child(-n+2):before, 
+    &.edit span.star:nth-child(3):hover ~ span.star:nth-child(-n+3):before, 
+    &.edit span.star:nth-child(4):hover ~ span.star:nth-child(-n+4):before, 
+    &.edit span.star:nth-child(5):hover ~ span.star:nth-child(-n+5):before {
+        content:"\f005";
+        color:#efd227;
+    }
+
+    // editable 
+    &.edit {
+        direction: rtl;
+    
+        span.star {
+            margin-left:3px;
+            
+            &:last-child {
+                margin-left:0;
+            }
+
+            &:hover {
+                cursor:pointer;
+            }
+        }
+
+        span.star:hover:before,
+        span.star:hover ~ span.star:before, 
+        &[data-value='1'] span.star:nth-child(5):before, 
+        &[data-value='2'] span.star:nth-child(n+4):before, 
+        &[data-value='3'] span.star:nth-child(n+3):before, 
+        &[data-value='4'] span.star:nth-child(n+2):before, 
+        &[data-value='5'] span.star:nth-child(n+1):before {
+            content:"\f005";
+            color:#efd227;
+        }
+    }
+
+    // not editable 
+    &:not(.edit) span.star {
+        margin-right:3px;
+
+        &:last-child {
+            margin-right:0;
+        }
+    }
+}

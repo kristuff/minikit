@@ -1,0 +1,48 @@
+.text {
+    // --- weight --- //
+    &-ultralight {
+        font-weight: 100 !important;
+    }
+    &-light {
+        font-weight: 200 !important;
+    }
+    &-normal {
+        font-weight: 400 !important;
+    }
+    &-semi-bold {
+        font-weight: 600 !important;
+    }
+    &-bold {
+        font-weight: 700 !important;
+    }
+
+    // --- size --- //
+    &-xs,
+    &-xsmall {
+        font-size:  70%;
+    }
+    
+    &-s,
+    &-small {
+        font-size:  85%;
+    }
+
+    &-m,         
+    &-medium { 
+        font-size: 120%;
+    }
+
+    &-l,         
+    &-large { 
+        font-size: 150%;
+    }
+
+    &-xl,
+    &-xlarge{
+        font-size: 200%;
+    }
+
+    &-strong {
+        font-weight:bold;
+    }
+}

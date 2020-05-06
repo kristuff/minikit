@@ -1,0 +1,131 @@
+
+
+.blog-entry {
+    display:block;
+    padding:0;
+
+    + .blog-entry {
+         margin-top:10px;
+         border-top:1px solid #d0d0d0;
+         padding-top:20px
+    }
+    
+    .blog-entry-header {
+        display:block;
+    
+        a:hover  {
+            text-decoration-line:underline;
+        }
+
+        .blog-entry-title {
+            font-size:28px;
+            line-height:30px;
+            margin-bottom:10px;
+        }
+
+        .blog-entry-meta {
+            display:block;
+            font-size:14px; //todo
+            margin-bottom:10px; //todo
+
+            .blog-entry-meta-item  {
+                display:inline-block;
+
+                &:after{
+                    display:inline-block;
+                    content: '|';
+                    padding:0 2px;
+                }
+
+                &:last-child:after{
+                    content:'';
+                } 
+
+                i {
+                    margin-right:2px;
+                    display:inline;
+                }
+
+                ul {
+                    display:inline-block;
+
+                    li {
+                        list-style:none;
+                        margin-right:2px;
+                        display:inline-block;
+
+                        a.btn {
+                            line-height:normal;
+                            padding:2px 3px;
+                            color:#fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.summary .blog-entry-header .blog-entry-title {
+        font-size:22px;
+        line-height:24px;
+        margin-bottom:5px;
+    }
+
+    &.summary .blog-entry-header .blog-entry-meta {
+        font-size:13px;
+        margin-bottom:5px;
+    }
+
+    pre {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .blog-entry-content {
+        display:block;
+        margin-bottom:6px;
+
+        figure,
+        video,
+        img {
+            max-width:100%;
+            display: block;
+        }
+
+        p {
+            text-align:justify
+        }
+    }
+}
+
+.blog-panel {
+    display:flex;
+    margin:0;
+    width:100%;
+    flex-direction: column;
+    padding-top: 20px;
+
+
+    .blog-aside,
+    .blog-main   {
+        width:100%;
+    }
+
+    @media only screen and (min-width:1024px){
+        flex-direction: row;
+
+
+        .blog-main {width:70%;}
+        .blog-aside {width:30%;padding-left:30px;}
+    }
+
+}
+
+
+.blog-tags {
+    text-align:left;
+
+    ul li {
+        display:inline-block;
+    }
+}

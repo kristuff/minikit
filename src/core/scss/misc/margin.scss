@@ -1,0 +1,19 @@
+/* margin utils */
+.margin {
+
+    &-10        { margin: 10px;         }
+    &-right-10  { margin-right: 10px;   }
+    &-left-10   { margin-left: 10px;    }
+    &-top-10    { margin-top: 10px;     }
+    &-bottom-10 { margin-bottom: 10px;  }
+
+    &-20        { margin: 20px;         }
+    &-right-20  { margin-right: 20px;   }
+    &-left-20   { margin-left: 20px;    }
+    &-top-20    { margin-top: 20px;     }
+    &-bottom-20 { margin-bottom: 20px;  }
+}
+
+.no-margin {
+    margin: 0!important;
+}

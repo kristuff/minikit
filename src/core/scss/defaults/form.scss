@@ -1,0 +1,47 @@
+
+form label, 
+form input[type=text], 
+form input[type=password], 
+form 
+textarea {
+    width:100%;
+    display:block
+}
+
+input + label    {margin-top: 6px;}
+label + input    {margin-top: 4px;}
+label + textarea {margin-top: 4px;}
+label + select   {margin-top: 4px;}
+input + input    {margin-top: 10px;}
+
+form {
+    border:none;
+}
+
+.form {
+    padding:10px;
+    width:100%;
+    border-radius: .25em;
+    border:1px solid #ccc;   
+}
+
+form.small {max-width:350px;} 
+form.medium {max-width:460px;} 
+
+.align-center form.small,
+.align-center form.medium {
+    margin:0 auto;
+}
+
+@media screen and (min-width:768px) {
+    .form {padding:20px;}
+}
+
+form .bottom-message {  
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -40px;
+    text-align: center;
+    font-size: 90%;
+}

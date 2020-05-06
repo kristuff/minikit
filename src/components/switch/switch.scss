@@ -1,0 +1,82 @@
+/** 
+ * switcher 
+ * 
+ * Usage:
+ *  <input type="checkbox" class="switch" id="switcher" />
+ *  <label for="switcher"></label>
+ */
+input[type=checkbox].switch {
+    display: none;
+    
+    + label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width:60px;
+        height: 30px;
+        background: grey;
+        display: inline-block;
+        border-radius: 60px;
+        position: relative;
+        margin-top: 0; // remove margin applied to input + label
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 24px;
+            height: 24px;
+            background: #fff;
+            border-radius: 50%;
+            transition: 0.3s;
+
+            &:active {
+                width: 130px;
+            }
+        }
+    }
+
+    &:checked + label:after {
+        left: calc(100% - 3px);
+        transform: translateX(-100%);
+    }
+
+    // size large
+    &.size-large + label,
+    &.size-l + label {
+        width: 80px;
+        height: 40px;
+
+        &:after {
+            top: 3px;
+            left: 3px;
+            width: 34px;
+            height: 34px;
+        }
+    }
+    &.size-l:checked + label:after {
+        left: calc(100% - 3px);
+    }
+}
+
+// adjust color for dark theme
+[data-theme="dark"] {
+    input[type=checkbox].switch + label {
+        background: $color-input-background-on-dark;
+    }        
+}
+
+// system colors
+@mixin color-switch($color-theme-name, $color-theme-light, $color-theme-medium, $color-theme-dark, $text-color){
+    [data-color="#{$color-theme-name}"] {
+
+        input[type=checkbox]:checked.switch + label {
+            background: $color-theme-medium;
+        }
+    }
+}
+
+@each $color in $colors {
+    @include color-switch(first($color), second($color), third($color), fourth($color), fith($color));
+}
+

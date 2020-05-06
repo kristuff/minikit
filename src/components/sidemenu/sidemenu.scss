@@ -1,0 +1,194 @@
+
+/* side menu */
+.side-menu {
+    position:fixed;
+    top:0;
+    left:0;
+    width: 220px; //todo
+    height:100%;
+    backface-visibility:hidden;
+    z-index:3;
+    transform: translateX(-100%); 
+    transition: transform 220ms ease-in-out;
+
+    &.open {
+        transform: translateX(0);
+        box-shadow: 2px 0 16px 0 rgba(0,0,0,0.3);
+
+        & ~ .main-header .side-menu-trigger {
+            display:none;
+        }
+    } 
+
+    .side-menu-header {
+        min-height: 60px;
+
+        .side-menu-pin-trigger    {
+            display:none;
+            float: right;
+            
+            i  {
+                transition:all 0.22s ease-out;
+            }
+        }
+    }
+
+    ul.side-menu-items {
+        overflow-y:auto;
+        height: calc(100% - 60px);
+    
+        li {
+             list-style:none;
+             padding-left:0;
+             display:block;
+             width:100%;
+    
+            a.side-menu-item {
+                display:block; 
+                width:100%;
+                font-size: 1.8rem;
+                font-weight: 200;
+                padding:12px 10px;
+                border-left:5px solid transparent;
+                border-right:5px solid transparent;
+            
+                i.item-icon {
+                    margin-right:4px;
+                }
+                .item-title {
+                    display:inline-block
+                }
+
+                &.active {
+                    background-color:rgba(0,0,0,.2)
+                } 
+                
+            }
+        }
+    }
+
+    @media only screen and (min-width:768px){
+        &:not(.pinnable):not(.expanded) ul.side-menu-items li a.side-menu-item .item-title {
+            display:none
+        }
+        &:not(.pinnable).expanded ul.side-menu-items li a.side-menu-item .item-title {
+            display:inline-block
+        }
+    }    
+}
+
+
+.side-menu .header, 
+.side-menu ~ .main-header {
+    vertical-align:baseline;
+    line-height: 55px;
+    max-height:55px;
+}
+
+.side-menu ~ .main-header .back-trigger,
+.side-menu-pin-trigger, 
+.side-menu-back-trigger, 
+.side-menu-trigger {
+    width:55px;
+    height:55px;
+    text-align:center;
+    display: inline-block;
+    font-size:18px;
+    line-height: 55px;
+}
+
+
+.side-menu ~ .main-header .back-trigger{display: none;}
+.side-menu ~ .main-header .back-trigger.active {display: inline-block;}
+.side-menu ~ .main-header .back-trigger.active ~ .side-menu-trigger {display: none;}
+
+
+
+
+.side-menu-back-trigger:hover, 
+.side-menu .side-menu-trigger:hover, 
+.side-menu  ~ .main-header .side-menu-trigger:hover, 
+.side-menu .side-menu-item:hover, 
+.side-menu .side-menu-pin-trigger:hover {
+    background-color:rgba(0,0,0,.1)
+} 
+
+/* overlay */
+.overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:2;
+    background-color: rgba(255, 255, 255, 0.1);
+    display:none;
+}
+
+.side-menu.open ~ .overlay, 
+.overlay.active {
+    display:block;
+} 
+
+/* content */
+.side-menu ~ .main-content {
+    z-index:1;
+    width:100%;
+    padding:10px;
+} 
+
+/* header !!!todo */
+.main-header {padding: 0;} 
+.main-header .side-menu-trigger {margin-right:10px;}
+
+@media only screen and (max-width:767px) {
+    .side-menu-back-trigger + .side-menu-trigger {display:none;}
+}
+
+@media only screen and (min-width:768px){
+
+ 
+    .side-menu ~ .main-content {padding:20px;} 
+    .side-menu ~ .main-header {padding-left:20px;} 
+    .side-menu ~ .main-header .side-menu-back-trigger {margin-left:-20px;}
+
+    .side-menu.expanded {transform: translateX(0);} 
+    .side-menu.expanded ~ .main-header .side-menu-trigger {display:none;}
+    .side-menu:not(.pinnable):not(.expanded) {width:55px;transform: translateX(0);}
+
+ 
+    .side-menu .side-menu-pin-trigger {display:inline-block;} 
+    .side-menu.expanded {box-shadow: initial;}
+    .side-menu:not(.pinnable) ~ .overlay,
+    .side-menu.pinnable.open  ~ .overlay {display:none;} 
+    .side-menu:not(.pinnable) ~ .main-header .side-menu-trigger ,
+    .side-menu.pinnable.open  ~ .main-header.side-menu-trigger {display:none;} 
+    .side-menu.open ~ .overlay {display:block;}
+    .side-menu.open {box-shadow: 2px 0 16px 0 rgba(0,0,0,0.3);}
+
+    .side-menu:not(.pinnable) ~ .main-header,
+    .side-menu:not(.pinnable) ~ .main-content {margin-left: 55px;width: calc(100% - 55px)}
+    .side-menu.pinnable.pinned ~ .main-header,
+    .side-menu.pinnable.pinned ~ .main-content,
+    .side-menu:not(.pinnable).expanded ~ .main-header,
+    .side-menu:not(.pinnable).expanded ~ .main-content {margin-left:220px;width: calc(100% - 220px);}
+}
+
+@media only screen and (min-width:1400px){
+    .side-menu ~  .main-content {padding:30px;} 
+}
+
+// system color
+@mixin color-sidemenu($color-theme-name, $color-theme-light, $color-theme-medium, $color-theme-dark, $text-color){
+    [data-color="#{$color-theme-name}"] {
+
+        .side-menu .side-menu-items a.side-menu-item.active {
+            border-left-color: $color-theme-medium; 
+            // color: $color-theme-medium; 
+        }
+    }
+}
+
+@each $color in $colors {
+    @include color-sidemenu(first($color), second($color), third($color), fourth($color), fith($color));
+}

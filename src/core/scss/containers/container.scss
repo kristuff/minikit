@@ -1,0 +1,15 @@
+.container {
+
+    &.small  {
+        max-width:360px;
+        padding:10px;
+    }
+    &.medium {
+        max-width:560px;
+        padding:20px;
+    } 
+    &.large  {
+        max-width:740px;
+        padding:30px;
+    } 
+}

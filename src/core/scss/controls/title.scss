@@ -1,0 +1,12 @@
+.title-u {
+    &:after { 
+        display:block;
+        content:'';
+        width:50px;
+        margin-top:10px;
+        margin-bottom:20px;
+        border-bottom: 2px solid #000;
+    }
+    &.large:after  {border-bottom-width:4px;}
+    &.medium:after {border-bottom-width:3px;}
+}

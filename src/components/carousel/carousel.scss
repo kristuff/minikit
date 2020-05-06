@@ -1,0 +1,60 @@
+.carousel {
+    display:block;
+    justify-content: flex-start;
+    overflow: hidden;
+    position: relative;
+    width:100%;
+
+    > .carousel-inner {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        transform: translate3d(0, 0, 0);
+        transition: transform 700ms;
+        padding-bottom: 40px;
+
+
+         > .carousel-item {
+            flex-shrink: 0;
+            line-height: 1.4;
+            text-align: center;
+            width: 100%;
+    
+            .item-inner {
+                display: block;
+                margin:0 auto;
+            } 
+        }
+
+    }
+
+    > nav {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        z-index: 1;
+
+        > a  {
+            font-size:22px;
+            opacity: .2;
+            text-decoration: none;
+            
+
+            &.current {opacity: 1;}
+            &:hover   {opacity: .5;}
+
+        }
+
+        &.carousel-tabs {
+            
+        
+        }
+
+
+    }
+
+   
+}
+

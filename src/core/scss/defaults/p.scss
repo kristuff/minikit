@@ -1,0 +1,12 @@
+p {
+    margin: 0;
+}
+
+figure + p,
+p + p {
+    margin-top: 1em
+}
+
+p .button + label, 
+p .button-o + label {margin-left: 20px;}
+
