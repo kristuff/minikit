@@ -1,0 +1,66 @@
+/* gauges */
+.gauge-container {
+    display:inline-block;
+    width:150px;
+    height:150px;
+    padding:10px;
+
+    > .gauge-label {
+        text-align: center;
+        position: absolute;
+    }
+
+    > .gauge {
+
+        > .dial {
+            stroke:#444; 
+            stroke-width: 2;
+        }
+
+        > .value {
+            stroke: $color-status-ok; 
+            stroke-dasharray:none; 
+            stroke-width: 2;
+        }
+
+        > .value-text {
+            fill: $color-status-ok; 
+            font-family:sans-serif; 
+            font-weight: bold; 
+            font-size: 8em;
+        }
+    }
+
+    // small size
+    &.small  {
+        width:120px;
+        height:120px;
+        padding:5px;
+
+        > .gauge > .value-text {
+            font-size:11em;
+        }
+    }
+
+    // style 
+    &.gauge-medium > .gauge {
+        .dial {
+            stroke-width: 10;
+        }
+        .value {
+            stroke-width: 10;            
+        }
+    }
+
+    // colors
+    &[data-alert-code="0"]  > .gauge > .value     {stroke: $color-status-ok !important;}
+    &[data-alert-code="0"]  > .gauge > .value-text {fill:  $color-status-ok!important;}
+    &[data-alert-code="1"]  > .gauge > .value     {stroke: $color-status-warning !important;}
+    &[data-alert-code="1"]  > .gauge > .value-text {fill:  $color-status-warning !important;}
+    &[data-alert-code="2"]  > .gauge > .value     {stroke: $color-status-error !important;}
+    &[data-alert-code="2"]  > .gauge > .value-text {fill:  $color-status-error !important;}
+}
+
+.align-center .gauge-container {
+    margin: 0 auto;
+}

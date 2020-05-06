@@ -1,0 +1,58 @@
+/* input */
+input, 
+select, 
+textarea, 
+button {
+    font-family:inherit;
+    font-size:inherit
+}
+
+input[type=submit],
+input[type=reset]
+    {cursor: pointer;}
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="number"], 
+textarea {
+    padding:6px 12px; 
+    outline:none;
+    border:1px solid #eceae5;
+    background-color:transparent;
+}
+
+input[type=submit]{
+    margin-top:10px;
+}
+
+input, 
+textarea, 
+select {
+    border-radius:$input-border-radius;
+}
+
+[data-style="flat"] {
+    input, 
+    textarea, 
+    select {
+        border-radius:0;
+       // border:none;
+    }
+}
+
+input:focus, 
+textarea:focus, 
+select:focus {
+    border-color:#ddd ;
+    outline:0;
+}
+
+select  {
+    padding:3px 6px; 
+    outline:none;
+    border:1px solid #eceae5;
+}
+
+table select {
+   // min-width:110px;
+}

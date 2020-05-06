@@ -1,0 +1,12 @@
+ul, ol {
+    list-style-position: inside;
+    list-style:none;
+
+    li {
+        display:block;
+
+        a {
+            display:inline-block;line-height:normal;
+        }
+    }
+}

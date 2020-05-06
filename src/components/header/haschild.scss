@@ -1,0 +1,155 @@
+
+/* ----------------------------------------------------------- 
+ * arrow icon in CSS - for element with nested unordered lists
+ * ----------------------------------------------------------- 
+ */
+.has-children {
+    & > a {
+        position: relative;
+        padding-right: 40px;
+
+        &::before, 
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            margin-top: -1px;
+            display: inline-block;
+            height: 2px;
+            width: 10px;
+            background: #464c4e;
+            backface-visibility: hidden;
+            transition: width 0.3s, 
+            transform 0.3s;
+
+            /* arrow goes on the right side on mobile - children navigation */
+            right: 20px;
+            transform-origin: 9px 50%;
+
+        }
+        
+        &::before {
+            transform: rotate(45deg);
+        }
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &.selected {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        display: block;
+        width: 100%;
+        z-index: 9999;
+
+        > a.nav-link {
+            padding-left: 10%;
+        }
+
+        > a::before {
+            left: 3% ;
+            transform: rotate(135deg);
+        }
+        > a::after {
+            left: 3% ;
+            transform: rotate(-135deg);
+        }
+    }
+}
+
+
+
+
+/* arrow goes on the right side - children navigation */
+.has-children.selected > a::before,
+.has-children.selected > a::after {
+  //  width: 14px;
+ //   background: #c9cbc4;
+ //    backface-visibility: hidden;
+    //transform-origin:50% 50%;
+
+}
+@media only screen and (min-width: 768px) {
+    .has-children.selected > a {
+        
+        &::before,
+        &::after {
+            left: 5% ;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .primary-nav {
+
+        .has-children {
+            position: relative;
+
+            > ul   {
+                position: absolute;
+                width: 160px; // TODO
+                padding: 0;
+                box-shadow: -4px 4px 5px 0px rgba(0,0,0,0.3);
+
+                > li a {
+                    text-align: left;
+                    border: none;
+                    padding: 1em;
+                }
+            }
+        }
+    }
+
+
+   
+
+    /* main navigation arrows on larger devices */
+    .primary-nav > .has-children {
+
+        > a {
+            padding-right: 30px !important;
+        
+            &::before, 
+            &::after {
+                width: 9px;
+                background: #c9cbc4;
+                backface-visibility: hidden;
+                transform-origin:50% 50%;
+                left:unset;
+            }
+
+            &::before {
+                right: 12px;
+            }
+            &::after  {
+                right: 7px;
+            }
+        }
+    
+        &.selected > a {
+            padding-left: 0;
+
+            &::before {
+                transform: translateX(5px) rotate(-45deg);
+                width: 14px;
+            }
+    
+            &::after {
+                transform: rotate(45deg);
+                width: 14px;
+            }
+        }        
+    }
+}
+
+
+.has-children ul {
+    width:100%;
+    display: none;
+}
+.has-children.selected > ul {
+    display: block;
+}

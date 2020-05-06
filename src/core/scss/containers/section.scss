@@ -1,0 +1,14 @@
+.section {
+    padding-top:10px;
+    padding-bottom:10px;
+    width:100%;
+
+    &.medium     {
+        padding-top:30px;
+        padding-bottom:50px;
+    }
+    &.large      {
+        padding-top:80px;
+        padding-bottom:100px;
+    }
+}

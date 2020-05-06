@@ -1,0 +1,13 @@
+
+*[data-font="roboto"],          .font-roboto            { font-family:'Roboto', sans-serif;             } 
+*[data-font="opensans"],        .font-opensans          { font-family:'Open Sans', sans-serif;          }       
+*[data-font="opensans-light"],  .font-opensans-light    { font-family:'Open Sans Light', sans-serif;    }
+*[data-font="catamaran"],       .font-catamaran         { font-family:'Catamaran', sans-serif;          }
+*[data-font="lato"],            .font-lato              { font-family:'Lato', sans-serif;               }
+
+
+*[data-font="system"] .font-system {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 
+                "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue", sans-serif;
+}
+//TODO data-font-size 

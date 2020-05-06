@@ -1,0 +1,72 @@
+/* back to top */
+a.scroll-top {
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    z-index:900;
+    display:block;
+    width: 50px;height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size:20px;
+    color:#fff; // TODO
+    background-color: rgba(0, 0, 0, 0.37);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.37);
+    transition: all 280ms ease-in-out;
+    transform: translateY(100px);
+    
+    &.scrolled {
+        transform: translateY(0);
+    }
+
+    &.square {
+      border-radius:3px;
+    }
+    &.circle {
+      border-radius:50%;
+    }
+    
+
+    &.from-bottom   {
+      transform: translateY(100px);
+
+      &.scrolled {
+        transform: translateY(0);
+      }
+      
+    }
+    &.from-right {
+      transform: translate(100px,0);
+
+      &.scrolled  {
+        transform: translate(0,0);
+      }
+    }
+}
+
+:not([data-no-touch]) a.scroll-top {
+  opacity:0.5;
+
+  &:hover {
+    opacity:1;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.3);
+  }
+
+}
+@media only screen and (min-width: 768px) {
+  a.scroll-top {right: 20px;bottom: 20px;}
+}
+
+@media only screen and (min-width: 1024px) {
+  a.scroll-top {
+    right: 30px;
+    bottom: 30px;
+    width:55px;
+    height:55px;
+    line-height:55px;
+    
+    &.square {
+      border-radius:5px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+/** 
+ * checkbox 
+ * 
+ * Usage:
+ *  <input type="checkbox" class="checkbox" id="mycheckbox" />
+ *  <label for="mycheckbox"></label>
+ */
+ input[type=checkbox].checkbox {
+    display: none;
+  
+    + label {
+        display: inline-block;
+        cursor:pointer;
+    
+        &:before {
+            font-family:FontAwesome;
+            content:"\f096";
+            margin-right: 4px;
+            min-width: 15px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+    }
+
+    &:checked + label:before {
+        content:"\f046";
+    }
+}

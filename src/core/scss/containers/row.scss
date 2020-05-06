@@ -1,0 +1,27 @@
+.row {
+    box-sizing:border-box;
+    padding:0;
+    margin:0 auto;
+    width:96%;
+
+    &.full-width,
+    .row {
+        width:100%;
+    }
+}
+
+@media only screen and (min-width:768px)  {
+    .row:not(.full-width) {width:96%; max-width:1100px;}
+    .row-large .row:not(.full-width) {min-width:initial;}
+}
+
+@media only screen and (min-width:1024px) {
+    .row:not(.full-width) {width:94%; max-width:1200px;}
+    .row-large .row:not(.full-width) {min-width:initial;}
+                                          
+}
+@media only screen and (min-width:1400px) {
+   .row:not(.full-width) {width:80%;}
+   .row-large .row:not(.full-width) {width:90%;}
+}
+

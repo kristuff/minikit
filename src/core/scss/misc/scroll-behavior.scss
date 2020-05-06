@@ -1,0 +1,11 @@
+
+// scroll-behavior: smooth|auto;
+// not supported in all browsers 
+// @see https://caniuse.com/#search=scroll-behavior
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+.auto-scroll {
+    scroll-behavior: auto;
+}

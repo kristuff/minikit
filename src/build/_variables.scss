@@ -1,0 +1,79 @@
+
+
+// fonts TODO
+$system-font: -apple-system, system-ui, BlinkMacSystemFont, 
+                "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue", sans-serif;
+
+//
+//$primary-font: 'Open Sans', sans-serif;
+$primary-font: $system-font;
+
+// Headings
+$headings-margin-bottom:0.5em;
+$headings-line-height:1.2;
+$headings-font-weight:400;
+
+
+// Buttons
+$button-box-shadow:none;    //  0 2px 1px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3);
+$bt-border-radius:0;        //3px;
+
+
+$input-border-radius:0;      //3px;
+
+
+
+// header
+$header-height-small: 60px;
+$header-height-normal: 80px;
+
+$secondary-nav-height-small: 50px;
+$secondary-nav-height-normal: 70px;
+
+
+// colors
+$color-white: #ffffff; 
+$color-light: #bbb; 
+$color-normal: #555; 
+$color-highlight: #222; 
+
+$color-bg-light:#f3f3f3;
+$color-bg-dark:#2b2b2c;
+
+$color-border-normal:  #d4d4d4;
+$color-border-on-light:#c2c2c2;
+$color-border-on-dark:#353536;
+
+$color-button-background-on-white:#c2c2c2;
+$color-button-background-on-dark:#302f2f;
+$color-button-background-on-dark-hover:#272626;
+$color-button-background-on-light:#c2c2c2;
+$color-button-border-on-light:#c2c2c2;
+$color-button-border-on-white:#c2c2c2;
+$color-button-border-on-dark :#302f2f;
+
+$solor-on-dark-button-background:       #1a1919;
+$solor-on-dark-button-background-hover: #272626;
+$color-on-dark-border:    #333;
+$color-on-dark-light:     #777;
+$color-on-dark:           #ddd;
+$color-on-dark-highlight: #eee;
+
+
+$color-input-background-on-dark: rgba(0, 0, 0, 0.2);
+
+// statuts colors 
+$color-status-ok:      #118a39; 
+$color-status-warning: #e79c11;
+$color-status-error:   #c41818;
+$color-status-info:    #207aa7;
+
+
+// colors system
+$color-magenta: 'magenta',#b64aa9,#8F3985, #331e32, #fff;
+$color-orange:  'orange', #f26522,#da5a20, #50220d, #fff;
+$color-green:   'green',  #158439,#127a33, #093a18, #fff;
+$color-yellow:  'yellow', #e4c515,#d4b712, #998410, #fff;
+$color-blue:    'blue',   #195ea9,#175699, #0e355f, #fff;
+$color-red:     'red',    #c21a1a,#ab1414, #791010, #fff;
+$colors: $color-magenta, $color-orange, $color-green, $color-yellow, $color-blue, $color-red ;

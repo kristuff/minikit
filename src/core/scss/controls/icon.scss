@@ -1,0 +1,18 @@
+.icon {
+    display: flex;
+    margin: auto;
+    padding: 10px;
+
+    > i {
+
+    }
+
+    &.square {
+        border-radius: 3px; // TODO VAR
+    }
+
+    &.rounded {
+        border-radius:50%;
+    }
+
+}

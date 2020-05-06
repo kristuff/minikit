@@ -1,0 +1,28 @@
+/* badges */
+.badge, 
+.badge-o {
+    padding:1px 4px;
+    border-radius:3px;
+    font-size:14px;
+    border:1px solid;
+}
+
+.badge:not([data-badge]),
+.badge-o:not([data-badge]),    
+.badge[data-badge="white"]   {color: #000; background-color: #fff;    border-color:#ccc;}
+.badge[data-badge="dark"]    {color: #fff; background-color: #373737; border-color: #000;}
+.badge[data-badge="warning"] {color: #fff; background-color: #e79c11; border-color: #e79c11;}
+.badge[data-badge="info"]    {color: #fff; background-color: #31708f; border-color: #31708f;}
+.badge[data-badge="error"]   {color: #fff; background-color: #c41818; border-color: #c41818;}
+.badge[data-badge="success"] {color: #fff; background-color: #118a39; border-color: #118a39;}
+
+// flat style
+[data-style="flat"] .badge,
+.badge[data-style="flat"] {
+    border-radius:0; 
+}
+
+// badge outline
+.badge-o {
+    background-color:transparent!important;
+}

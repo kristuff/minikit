@@ -1,0 +1,176 @@
+
+
+ /* default */
+  [data-theme="white"]{
+
+  }
+
+
+
+
+body,
+ .bg-normal,
+ .bg-container,
+ .main-header,
+ ul.primary-nav, 
+ ul.primary-nav li {
+     background-color: $color-white;
+     color: $color-normal; 
+
+}
+
+/* normal - default */
+a  {color:$color-normal}
+a:hover {color:$color-highlight}
+
+.text-divider {
+    color: $color-light;
+
+    &::before, &::after {
+        background: $color-light;
+    }
+}
+
+.color-light {
+    color:$color-light; 
+}
+
+.fill-color-light {
+    fill:$color-light; 
+}
+
+
+.dialog .dialog-inner.tab-control  .tab .bottom-message { 
+    color: $color-on-dark-highlight; 
+}
+
+
+ /* imput */
+ input[type="text"], 
+ input[type="password"], 
+ input[type="email"], 
+ input[type="number"], 
+ textarea, 
+ select{
+     border-color:$color-light;
+     color: $color-normal;
+ }
+
+ /* default - highlight */
+ .highlight {
+     color:$color-highlight;
+ 
+     .button-o, 
+     &.button-o {
+         color:$color-on-dark-highlight;
+
+         &:hover {
+            background-color:$color-on-dark-highlight;
+            color:$color-highlight;
+         }
+     }
+ }
+
+
+ /* theme - white */    
+ .bg-white,
+ [data-theme="white"] {
+    color: $color-normal; 
+    background-color: $color-white;
+    
+    .tab-items {
+        border-bottom-color:$color-border-normal;
+    }
+}
+
+/* theme - light */    
+.bg-light,
+[data-theme="light"] {
+    background-color:$color-bg-light;
+    
+    .tab-items {
+        border-bottom-color:$color-border-on-light;
+    }
+
+    .main-header:not([data-theme]),
+    &.main-header,
+    .side-menu, 
+    ul.primary-nav,
+    ul.primary-nav li {
+        background-color:$color-bg-light;
+        //  color: $color-on-li; 
+
+        &.transparent:not(.scrolled) {
+            background-color: transparent;
+        }
+    }
+    
+}
+
+
+/* theme - dark */    
+.bg-dark,
+[data-theme="dark"] {
+    background-color:$color-bg-dark;
+    color: $color-on-dark; 
+
+    
+
+    a       { color: $color-on-dark; }
+    a:hover { color: $color-white; }
+
+
+
+    &.secondary-nav ul > li a:hover, 
+    ul.primary-nav > li a:hover {
+        color: $color-white;
+    }
+
+    .highlight,
+    &.secondary-nav ul > li.active a,
+    ul.primary-nav > li.active a { 
+        color: $color-on-dark-highlight;
+    }
+
+    .dialog-inner{
+        background-color:$color-bg-dark;
+        color: $color-on-dark; 
+    }
+
+    .main-header:not([data-theme]),
+    &.main-header,
+    .side-menu, 
+    ul.primary-nav,
+    ul.primary-nav li {
+        background-color:$color-bg-dark;
+        color: $color-on-dark; 
+
+        &.transparent:not(.scrolled) {
+            background-color: transparent;
+        }
+    }
+
+    a.nav-link   { color: $color-on-dark ;          }
+    .highlight   { color: $color-on-dark-highlight; }
+    .color-light { color: $color-on-dark-light;     }
+
+    input[type="text"], 
+    input[type="password"], 
+    input[type="email"], 
+    input[type="number"], 
+    textarea, 
+    select,
+    form{
+        border-color:$color-border-on-dark;
+        color: $color-on-dark ; 
+    }
+
+    input[type="text"], 
+    input[type="password"], 
+    input[type="email"], 
+    input[type="number"], 
+    textarea, 
+    select{
+        background-color: $color-input-background-on-dark;
+    }
+}

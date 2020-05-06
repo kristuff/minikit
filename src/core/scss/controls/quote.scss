@@ -1,0 +1,19 @@
+.quoted {
+    display:block;
+    font-style: italic;
+
+    &::before {
+        content:'\f10d' ;
+        font-family: 'fontawesome';
+        margin-right:10px;
+        color:#7c7c7c;
+    } 
+    &::after {
+        content:'\f10e' ;
+        font-family: 'fontawesome';
+        margin-left:10px;
+        color: #7c7c7c;
+    } 
+}
+
+//TODO themes

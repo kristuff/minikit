@@ -1,0 +1,34 @@
+/* animations */
+.anim-from-left, 
+.anim-from-top, 
+.anim-scale-increase, 
+.anim-scale-decrease {
+  /* Force hardware acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.anim-scale-increase { animation: anim-scale-increase 0.5s 0.3s both; }
+.anim-scale-decrease { animation: anim-scale-decrease 0.6s 0.3s both; }
+.anim-from-left      { animation: anim-from-left 0.4s 0.2s both;      }
+.anim-from-top       { animation: anim-from-top 0.4s 0.2s both;       }
+
+@keyframes anim-from-top {
+  0%    {opacity: 0;transform: translateY(-10%);  }
+  100%  {opacity: 1;transform: translate(0, 0);   }
+}
+
+@keyframes anim-from-left {
+  0%    {opacity: 0;transform: translateX(-10%);  }
+  100%  {opacity: 1;transform: translate(0, 0);   }
+}
+
+@keyframes anim-scale-increase {
+  0%    {opacity: 0;transform: scale(0.9);  }
+  100%  {opacity: 1;transform: scale(1);    }
+}
+
+@keyframes anim-scale-decrease {
+  0%    {opacity: 0;transform: scale(3);    }
+  100%  {opacity: 1;transform: scale(1);    }
+}

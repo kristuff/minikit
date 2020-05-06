@@ -1,0 +1,65 @@
+/* alerts */
+.alert {
+    padding:10px 12px;
+    margin:10px 0;
+    border-left:4px solid transparent;
+
+    > i {
+        margin-right: 6px;
+    }
+    
+    &.dismissible {
+        padding-right: 35px;
+
+        .alert-close {
+            position: relative;
+            top: 0;
+            right: -22px;
+            color: inherit;
+        }
+    }
+
+    .alert-close {
+        float: right;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        filter: alpha(opacity=20);
+        opacity: .2;
+    }
+}
+
+
+.alert-close:hover, 
+.alert-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+button.alert-close {
+    box-shadow: none;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    margin: 0;
+}
+
+.alert[data-alert="warning"] {color:#8a6d3b; background-color:#e3dbb7; border-color:#8a6d3b;}
+.alert[data-alert="info"]    {color:#31708f; background-color:#d9edf7; border-color:#31708f;}
+.alert[data-alert="error"]   {color:#a94442; background-color:#f2dede; border-color:#a94442;}
+.alert[data-alert="success"] {color:#3c763d; background-color:#dff0d8; border-color:#3c763d;}
+
+.alert[data-alert="info"]:before    {content: '\f05a '; font-family: 'fontAwesome'; margin-right: 10px;}
+.alert[data-alert="warning"]:before {content: '\f071 '; font-family: 'fontAwesome'; margin-right: 10px;}
+.alert[data-alert="error"]:before   {content: '\f06a '; font-family: 'fontAwesome'; margin-right: 10px;}
+.alert[data-alert="success"]:before {content: '\f058 '; font-family: 'fontAwesome'; margin-right: 10px;}
+
+[data-color="warning"], .alert[data-alert="warning"] a {color:#8a6d3b;}
+[data-color="info"],    .alert[data-alert="info"] a    {color:#31708f;}
+[data-color="error"],   .alert[data-alert="error"] a   {color:#a94442;}
+[data-color="success"], .alert[data-alert="success"] a {color:#3c763d;}

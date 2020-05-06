@@ -1,0 +1,32 @@
+/* testimonials quote */
+.testimonal {
+    text-align:center;
+    padding:20px 0;
+
+     .avatar {
+         height:80px;
+         width:80px;
+         border-radius:50%;
+         display:block;
+         margin:0 auto;
+    }
+
+    .testimonal-content {
+        display:block;
+        font-size:16px;
+            padding:20px 0;
+        }
+}
+
+//TODO
+
+.testimonal .testimonal-header  {display:block;}
+.testimonal .testimonal-header .name {display:block;}
+.testimonal .testimonal-header .description {display:block;}
+
+.testimonal .testimonal-links   {
+    display:block;
+    line-height:45px;
+}
+
+

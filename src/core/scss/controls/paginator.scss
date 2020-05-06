@@ -1,0 +1,54 @@
+/* paginator */
+.paginator   {
+    display:inline-block;  
+    line-height:40px;
+
+    a {
+        display: inline-block; 
+        width:40px;
+        height:40px;
+        text-align:center;
+        vertical-align:baseline;
+        font-weight: bold;
+
+        &:hover {
+            background-color: rgba(1,1,1,0.1);
+        }
+    }
+
+    &.label-before[data-label]:before,
+    &.label-after[data-label]:after {
+        display: inline-block; 
+        content: attr(data-label); 
+        line-height:40px;
+        font-size:13px;
+    }
+    &.label-before[data-label]:before {
+        margin-right:3px;
+    }
+    &.label-after[data-label]:after   {
+        margin-left:3px;
+    }
+
+    @media (min-width:768px) {
+        &.label-before[data-label]:before {
+            font-size:14px;
+            margin-right:6px;
+        }
+        &.label-after[data-label]:after {
+            font-size:14px;
+            margin-left:6px;
+        }
+    }
+}
+
+//TODO
+
+
+
+[data-theme="dark"]  .XXpaginator,  
+[data-theme="dark"]  .XXpaginator a:not(.current) {color:#ccc;}
+[data-theme="white"] .XXpaginator, 
+[data-theme="white"] .XXpaginator a:not(.current) {color:#555;}
+[data-theme="light"] .XXpaginator, 
+[data-theme="light"] .XXpaginator a:not(.current) {color:#555;}

@@ -1,0 +1,239 @@
+/* buttons */
+button,
+.button, 
+input[type=button], 
+input[type=reset], 
+input[type=submit] {
+    padding: 10px 12px;
+    border: 1px solid;
+    cursor: pointer;
+    border-radius:$bt-border-radius;
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
+    text-align: center;
+    display: inline-block;
+    line-height:normal;
+    box-shadow:$button-box-shadow;  
+
+
+    // for riple effect
+    position: relative;
+    overflow: hidden;
+
+    &:focus {
+        outline-style: dotted;
+        //outline-color: red;
+        outline-width: thin;
+    }
+
+    &:active {
+       // transform: translateY(2px);
+    }
+
+    // riple effect
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 255, 255, .5);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%);
+        transform-origin: 50% 50%;
+    }
+    @keyframes ripple {
+        0% {
+            transform: scale(0, 0);
+            opacity: 1;
+        }
+        20% {
+            transform: scale(25, 25);
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: scale(40, 40);
+        }
+    }
+
+//  &:focus:not(:active)::after {
+    &:focus:active::after {
+        animation: ripple 1s ease-out;
+    }
+}
+
+// button outlined
+.button-o {
+    background-color: transparent!important;
+}
+
+// flat button
+.button-flat {
+    display:inline-block;
+    padding:6px;
+    border:none;
+    cursor:pointer;
+    text-decoration:none;
+   // min-width:300px;
+    text-align:left;
+    transition: all 200ms ease-in-out;
+
+    &:hover {
+        background-color: rgba(0,0,0,.1);
+       // outline: 2px solid rgba(3, 166, 255, 0.9);
+    } 
+    
+    i {
+       // min-height:45px;
+       // min-width:45px;
+       // line-height:45px;
+       // margin-right:10px;
+       // text-align:center
+    } 
+}
+
+// buttons lists
+.button + .button,
+.button + .button-o,
+.button-o + .button-o,
+.button-o + .button {
+    margin-left:12px
+}
+
+// buttons size
+.button.fw,
+.button-o.fw {
+    min-width:100px;
+
+    &.large,
+    &.large {
+        min-width:200px;
+    }
+}
+.button.small, 
+.button-o.small, 
+button.small, 
+input[type=submit].small {
+    padding:6px 8px;
+}
+
+.button.large, 
+.button-o.large, 
+button.large, 
+input[type=submit].large {
+    padding:15px;
+}
+
+.button[data-enabled='false'], 
+button[data-enabled='false'], 
+input[type=submit][data-enabled='false'] {
+    cursor: not-allowed;
+}
+
+/* toggle password button TODO*/
+input.password {
+    width:260px;
+    border-radius:$input-border-radius;
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+    
+    ~ .button.toggle-password {
+        border-top-left-radius:0;
+        border-bottom-left-radius:0 ;
+        margin:0; 
+        margin-left: -4px;
+        min-width:40px;
+        border-color: #eceae5;
+        border-left:0;
+        margin-bottom: 15px;
+        max-width:40px;
+    }
+
+    &[type=text] {
+        ~ .button.toggle-password {
+            i.unlock-icon  { display: initial; }
+            i.lock-icon    { display: none;    }
+        }
+    }
+
+    &[type=password] {
+        ~ .button.toggle-password {
+            i.unlock-icon  { display: none;    }
+            i.lock-icon    { display: initial; }
+        }
+    }
+}
+
+
+/* theme - white */    
+[data-theme="white"] {
+ 
+}
+
+/* theme - light */    
+[data-theme="light"] {
+    
+}
+
+
+/* theme - dark */    
+[data-theme="dark"] {
+    
+    button:not(.theme):not(.button-o):not(.alert-close),
+    .button:not(.theme):not(.button-o), 
+    input[type=button]:not(.theme), 
+    input[type=reset]:not(.theme), 
+    input[type=submit]:not(.theme) {
+          background-color: $solor-on-dark-button-background;
+          border-color: $solor-on-dark-button-background;
+          color:$color-on-dark;
+
+          &:hover {
+            color:$color-on-dark-highlight;
+            background-color: $solor-on-dark-button-background-hover;
+          }
+    } 
+}
+
+
+
+@mixin color-button($color-theme-name, $color-theme-light, $color-theme-medium, $color-theme-dark, $text-color){
+    [data-color="#{$color-theme-name}"] {
+        
+        button.theme,
+        .button.theme, 
+        input[type=button].theme, 
+        input[type=reset].theme, 
+        input[type=submit].theme {
+            background-color: $color-theme-medium;
+            border-color: $color-theme-medium;
+            color:$text-color;
+
+            &:hover   {
+                background-color: $color-theme-light; 
+            }
+
+            &:focus {
+                outline-color: $color-theme-dark;
+            }
+        }
+    
+        .button-o.theme {
+              color: $color-theme-medium;
+              border-color: $color-theme-medium;
+              
+              &:hover   {
+                  color: $color-theme-light; 
+                  border-color: $color-theme-light; 
+            }
+        }
+    }
+}
+
+@each $color in $colors {
+    @include color-button(first($color), second($color), third($color), fourth($color), fith($color));
+}
+ 
