@@ -164,7 +164,7 @@ gulp.task('build-js', function(log) {
                 ['merge-js-core', 'merge-js-controls', 'merge-js-full'],
                 'min-js',
                 log);
-  });
+});
 
 gulp.task('build-css', function(log) {
     runSequence('clean-dist-css',
@@ -172,8 +172,6 @@ gulp.task('build-css', function(log) {
                 'min-css',
                 log);
 });
-
-
 
 
 /** 
